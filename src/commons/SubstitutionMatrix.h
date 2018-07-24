@@ -10,6 +10,7 @@
 
 #include <cstddef>
 #include "BaseMatrix.h"
+#include "SubstitutionMatrixProfileStates.h"
 #include "ProfileStates.h"
 
 class SubstitutionMatrix: public BaseMatrix {
@@ -29,14 +30,21 @@ class SubstitutionMatrix: public BaseMatrix {
                                                 const int N,
                                                 size_t alphabetSize);
         static void calcProfileProfileLocalAaBiasCorrectionAln(int8_t *profileScores,
-                                                             int N,
-                                                             size_t alphabetSize,
-                                                             BaseMatrix *subMat);
+                                                 int N,
+                                                 size_t alphabetSize,
+                                                 BaseMatrix *subMat);
+        static void calcProfileProfileLocalAaBiasCorrectionByBg(float *profileProba,
+                                                 int8_t *profileScores,
+                                                 SubstitutionMatrixProfileStates *profileStateMat,
+                                                 const int N,
+                                                 size_t alphabetSize);
         static void calcGlobalAaBiasCorrection(const BaseMatrix * m,
                                                short *profileScores,
                                                float *pNullBuffer,
                                                const size_t profileAASize,
                                                const int N);
+                                               
+                                                             
         bool estimateLambdaAndBackground(const double ** mat, int alphabetSize, double * pBack, double & lambda);
 
 

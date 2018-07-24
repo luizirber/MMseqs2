@@ -205,7 +205,7 @@ int ProfileStates::read(std::string libraryData) {
         return -1;
     }
 
-
+    // TODO MathUtil::NormalizeTo1
     for (k = 0; k < alphSize; ++k)
     {
         prior[k] /= zPrior;

@@ -427,6 +427,18 @@ void Sequence::mapProfileState(const char * sequenze){
             }
         }
     } else {
+        
+        
+        if(aaBiasCorrection==true){
+            SubstitutionMatrix::calcProfileProfileLocalAaBiasCorrectionByBg(profile,
+                                                 profile_for_alignment,
+                                                 profileStateMat,
+                                                 this->L,
+                                                 static_cast<size_t>(subMat->alphabetSize));
+        }
+        
+        /*
+         // Prev version: bias correction from the scores
         // write alignment profile
         for (int l = 0; l < this->L; ++l) {
             for (size_t aa_num = 0; aa_num < static_cast<size_t>(subMat->alphabetSize); ++aa_num) {
@@ -437,7 +449,7 @@ void Sequence::mapProfileState(const char * sequenze){
         }
         if(aaBiasCorrection==true){
             SubstitutionMatrix::calcProfileProfileLocalAaBiasCorrectionAln(profile_for_alignment,this->L,profileStateMat->alphabetSize,subMat);
-        }
+        }*/
 	/*
  	//TEST with a neg bias to avoid over extension
         for (int l = 0; l < this->L; ++l) {

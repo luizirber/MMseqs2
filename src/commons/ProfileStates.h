@@ -5,7 +5,7 @@
 
 #include "Util.h"
 #include "Debug.h"
-#include "SubstitutionMatrix.h"
+//#include "SubstitutionMatrix.h"
 #include "MathUtil.h"
 #include "LibraryReader.h"
 #include "Sequence.h"

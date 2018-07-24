@@ -2,6 +2,7 @@
 // For PSSMs: MMseqs just stores the position specific score in 1 byte
 
 
+#include "SubstitutionMatrix.h"
 #include "CSProfile.h"
 #include "MathUtil.h"
 #include "DBReader.h"
